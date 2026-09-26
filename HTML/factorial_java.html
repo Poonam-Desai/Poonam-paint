@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Square of a Number</title>
+</head>
+<body>
+<h2>calculate factorial no. using javascript function</h2>
+<input type="number" id="num" placeholder="enter number">
+<button onclick="calculateFaactorial()">Calculate</button>
+<p id="result"></p>
+
+<script>
+function calculateFactorial()
+{
+let num=document.getElementById("num").value;
+let result=1;
+if(num>=0){
+for(let i=2;i<=num;i++){
+result*=i;
+}
+document.getElementById("result").innerHTML ="the factorial of {num}is {result}";
+} else {
+document.getElementById("result").innerHTML ="factorial is not defined as negative no.";
+}
+}
+</script>
+</body>
+</html>
+
+
+
