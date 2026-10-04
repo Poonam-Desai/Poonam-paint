@@ -4,10 +4,8 @@ function App() {
   const [name, setName] = useState("Poonam");
 
   return (
-    <div>
-      <h2>{name}</h2>
-
-      
+    <div><br />
+      <h1>{name}</h1>
 
       <button onClick={function() {
         setName("Swara");

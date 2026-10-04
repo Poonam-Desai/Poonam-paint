@@ -8,24 +8,24 @@ function App() {
 
   function handleSubmit(event) {
     event.preventDefault();
-
+    
     setDisplayName(name);
     setDisplayAge(age);
   }
 
   return (
-    <div>
-      <h2>Student Form</h2>
+    <div><br />
+      <h2>Student Form</h2><br />
 
       <form onSubmit={handleSubmit}>
         <label>Name: </label>
+
         <input
           type="text"
           onChange={function(event) {
             setName(event.target.value);
           }}
         />
-
         <br /><br />
 
         <label>Age: </label>
@@ -35,12 +35,10 @@ function App() {
             setAge(event.target.value);
           }}
         />
-
         <br /><br />
 
         <button type="submit">Submit</button>
       </form>
-
       <h3>Name: {displayName}</h3>
       <h3>Age: {displayAge}</h3>
     </div>

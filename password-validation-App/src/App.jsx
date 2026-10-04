@@ -15,13 +15,13 @@ function App() {
       setError("Passwords do not match");
     } 
     else {
-      setError("Password is valid");
+      alert("Password is submit successfully");
     }
   }
 
   return (
-    <div>
-      <h2>Password Validation</h2>
+    <div><br />
+      <h2>Password Validation</h2><br />
 
       <form onSubmit={handleSubmit}>
         <label>Password: </label>
@@ -48,7 +48,7 @@ function App() {
 
         <button type="submit">Submit</button>
 
-        <p>{error}</p>
+        <p style={{color:"red"}}>{error}</p>
       </form>
     </div>
   );

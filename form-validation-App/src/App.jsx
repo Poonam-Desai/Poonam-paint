@@ -8,7 +8,6 @@ function App() {
 
   function handleSubmit(event) {
     event.preventDefault();
-
     if (name === "") {
       setMessage("Name is required");
     }
@@ -19,16 +18,13 @@ function App() {
       setMessage("Password must be at least 6 characters");
     }
     else {
-      setMessage("Form submitted successfully");
+      alert("Form submitted successfully");
     }
   }
-
   return (
-    <div>
-      <h2>Form Validation</h2>
-
+    <div><br />
+      <h1> Registration Form </h1><br />
       <form onSubmit={handleSubmit}>
-
         <label>Name: </label>
         <input
           type="text"
@@ -44,20 +40,16 @@ function App() {
           type="text"
           onChange={function(event) {
             setEmail(event.target.value);
-          }}
-        />       <br /><br />
-
+          }} />       <br /><br />
         <label>Password: </label>
         <input
           type="password"
           onChange={function(event) {
             setPassword(event.target.value);
-          }}
-        />       <br /><br />
-
+          }} />       <br /><br />
         <button type="submit">Submit</button>
 
-        <p>{message}</p>
+        <p style={{color:"red"}}>{message}</p>
 
       </form>
     </div>

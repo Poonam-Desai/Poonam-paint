@@ -1,42 +1,41 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 function App() {
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
-  function handleSubmit(event) {
+  function email1(event) {
+    setEmail(event.target.value);
+  }
+
+  function validateEmail(event) {
     event.preventDefault();
 
-    if (email.includes("@") && email.includes(".")) {
-      setMessage("Valid Email");
-    } else {
-      setMessage("Invalid Email");
+    var pattern = /^[a-z0-9]+@[a-z]+\.[a-z]+$/;
+
+    if (email === "") {
+      setError("Email is required");
+    }
+    else if (!pattern.test(email)) {
+      setError("Invalid Email");
+    }
+    else {
+      alert("Valid Email: " + email);
+      setError("");
     }
   }
 
   return (
-    <div>
-      <h2>Email Validation</h2>
-
-      <form onSubmit={handleSubmit}>
-        <label>Email: </label>
-
-        <input
-          type="text"
-          onChange={function(event) {
-            setEmail(event.target.value);
-          }}
-        />
-
-        <br /><br />
-
-        <button type="submit">Submit</button>
-
-        <p>{message}</p>
+    <div><br />
+      <h2>Email Validation</h2><br />
+      <form onSubmit={validateEmail}>
+        <input type="text" onChange={email1}
+          placeholder="Enter Email" /> <br /><br />
+        <button type="submit">Validate</button>
+        <p style={{ color: "red" }}>{error}</p>
       </form>
     </div>
   );
 }
 
 export default App;
-

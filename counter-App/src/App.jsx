@@ -5,19 +5,19 @@ function App() {
 
   return (
     <div>
-      <h2>Counter: {count}</h2>
+      <h1>Counter: {count}</h1>
 
       <button onClick={function() {
         setCount(count + 1);
       }}>
         +
-      </button><br />
+      </button><br /><br />
 
       <button onClick={function() {
         setCount(count - 1);
       }}>
         -
-      </button><br />
+      </button><br /><br />
 
       <button onClick={function() {
         setCount(0);

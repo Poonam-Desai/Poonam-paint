@@ -11,19 +11,15 @@ function App() {
       setError("Name is required");
     } else {
       setError("");
+      alert("Form submited successfully");
     }
   }
-
   return (
-    <div>
-      <h2>Name Validation</h2>
-
+    <div><br />
+      <h2>Name Validation</h2><br />
       <form onSubmit={handleSubmit}>
         <label>Name: </label>
-
-        <input
-          type="text"
-          onChange={function(event) {
+        <input type="text"  onChange={function(event) {
             setName(event.target.value);
           }}
         />
@@ -32,7 +28,7 @@ function App() {
 
         <button type="submit">Submit</button>
 
-        <p>{error}</p>
+        <p style={{color:"red"}}>{error}</p>
       </form>
     </div>
   );
